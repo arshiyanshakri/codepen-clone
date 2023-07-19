@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import Editor from "./Editor";
+import Header from "./Header";
 
-function App() {
+function App() 
+{
+const [html, setHtml]=useState('')
+const [css, setCss]=useState('')
+const [js, setJs]=useState('')
+
+const format=`
+  <html>
+  <body>${html}</body>
+  <style>${css}</style>
+  <script>${js}</script>
+  </html>
+`
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Header/>
+    <div className="backgnd editor">
+      <Editor
+          language="xml"
+          displayName="HTML"
+          value={html}
+          onChange={setHtml}
+        />
+       <Editor
+          language="css"
+          displayName="CSS"
+          value={css}
+          onChange={setCss}
+        />
+        <Editor
+          language="javascript"
+          displayName="JS"
+          value={js}
+          onChange={setJs}
+        />
     </div>
-  );
+
+    <div className="backgnd">
+        <iframe
+          srcDoc={format}
+          title="output"
+          sandbox="allow-scripts"
+          width="100%"
+          height="100%"
+        />
+    </div>
+    </>
+  )
 }
 
 export default App;
