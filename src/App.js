@@ -1,6 +1,12 @@
 import React,{useState} from "react";
 import Editor from "./Editor";
 import Header from "./Header";
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/css/css'
+import 'codemirror/mode/javascript/javascript'
+
 
 function App() 
 {

@@ -66,11 +66,5 @@ body{
   cursor: pointer;
 }
 
-#root > div.backgnd.editor > div:nth-child(2) > div.react-codemirror2.code-mirror-wrapper > div:nth-child(1)
-{ display: none; }
 
-#root > div.backgnd.editor > div:nth-child(1) > div.react-codemirror2.code-mirror-wrapper > div:nth-child(1)
-  { display: none; }
 
-#root > div.backgnd.editor > div:nth-child(3) > div.react-codemirror2.code-mirror-wrapper > div:nth-child(1)
-  { display: none; }
